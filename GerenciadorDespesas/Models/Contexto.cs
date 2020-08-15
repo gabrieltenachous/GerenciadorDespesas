@@ -9,25 +9,25 @@ namespace GerenciadorDespesas.Models
 {
     public class Contexto : DbContext
     {
+        #region dbsets
         public DbSet<Meses> Meses { get; set; }
         public DbSet<Salarios> Salarios { get; set; }
         public DbSet<Despesas> Despesas { get; set; }
         public DbSet<TipoDespesas> TipoDespesas { get; set; }
+        #endregion
 
+        #region construtor
         public Contexto(DbContextOptions<Contexto> opcoes) : base(opcoes) { }
+        #endregion
 
+        #region aplicação configuração
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TipoDespesasMap());
             modelBuilder.ApplyConfiguration(new DespesasMap());
-            modelBuilder.ApplyConfiguration(new MesesMap());
             modelBuilder.ApplyConfiguration(new SalariosMap());
-
+            modelBuilder.ApplyConfiguration(new MesesMap());
         }
-
+        #endregion
     }
 }
-
-
-
-

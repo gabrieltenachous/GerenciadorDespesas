@@ -30,3 +30,6 @@ C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDesp
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\GerenciadorDespesas.dll
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\GerenciadorDespesas.pdb
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\GerenciadorDespesas.csproj.CopyComplete
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\TipoDespesas\Create.g.cshtml.cs
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\TipoDespesas\Edit.g.cshtml.cs
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\TipoDespesas\Index.g.cshtml.cs
