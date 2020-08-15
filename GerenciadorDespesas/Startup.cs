@@ -31,7 +31,7 @@ namespace GerenciadorDespesas
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+            }); 
 
             services.AddDbContext<Contexto>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("Conexao")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
