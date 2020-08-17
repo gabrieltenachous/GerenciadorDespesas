@@ -33,3 +33,6 @@ C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDesp
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\TipoDespesas\Create.g.cshtml.cs
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\TipoDespesas\Edit.g.cshtml.cs
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\TipoDespesas\Index.g.cshtml.cs
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Salarios\Create.g.cshtml.cs
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Salarios\Edit.g.cshtml.cs
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Salarios\Index.g.cshtml.cs
