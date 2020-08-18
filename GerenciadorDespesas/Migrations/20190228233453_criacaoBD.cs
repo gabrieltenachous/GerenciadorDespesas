@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GerenciadorDespesas.Migrations
 {
-    public partial class CriacaoDB : Migration
+    public partial class criacaoBD : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,13 +23,13 @@ namespace GerenciadorDespesas.Migrations
                 name: "TipoDespesas",
                 columns: table => new
                 {
-                    TipoDespesasId = table.Column<int>(nullable: false)
+                    TipoDespesaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoDespesas", x => x.TipoDespesasId);
+                    table.PrimaryKey("PK_TipoDespesas", x => x.TipoDespesaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,7 +75,7 @@ namespace GerenciadorDespesas.Migrations
                         name: "FK_Despesas_TipoDespesas_TipoDespesaId",
                         column: x => x.TipoDespesaId,
                         principalTable: "TipoDespesas",
-                        principalColumn: "TipoDespesasId",
+                        principalColumn: "TipoDespesaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 

@@ -25,7 +25,7 @@ namespace GerenciadorDespesas.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.TipoDespesas.ToListAsync());
-        }
+        } 
 
         [HttpPost]
         public async Task<IActionResult> Index(string txtProcurar)
@@ -44,12 +44,12 @@ namespace GerenciadorDespesas.Controllers
 
             return Json(true);
         }
-         
+
         public JsonResult AdicionarTipoDespesa(string txtDespesa)
         {
-            if (!String.IsNullOrEmpty(txtDespesa))
+            if(!String.IsNullOrEmpty(txtDespesa))
             {
-                if (!_context.TipoDespesas.Any(td => td.Nome.ToUpper() == txtDespesa.ToUpper()))
+                if(!_context.TipoDespesas.Any(td => td.Nome.ToUpper() == txtDespesa.ToUpper()))
                 {
                     TipoDespesas tipoDespesas = new TipoDespesas();
                     tipoDespesas.Nome = txtDespesa;
@@ -68,7 +68,7 @@ namespace GerenciadorDespesas.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TipoDespesaId,Nome")] TipoDespesas tipoDespesas)
@@ -101,7 +101,7 @@ namespace GerenciadorDespesas.Controllers
             }
             return View(tipoDespesas);
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("TipoDespesaId,Nome")] TipoDespesas tipoDespesas)
@@ -137,7 +137,7 @@ namespace GerenciadorDespesas.Controllers
         #endregion
 
         #region delete
-        [HttpPost]
+        [HttpPost]       
         public async Task<JsonResult> Delete(int id)
         {
             var tipoDespesas = await _context.TipoDespesas.FindAsync(id);

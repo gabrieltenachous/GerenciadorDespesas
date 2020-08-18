@@ -2,18 +2,20 @@
 
 @{
     ViewData["Title"] = "Index";
-} 
+}
+
+
 <div class="tabela">
     <div class="container">
         <p class="btnNovo">
             <a asp-action="Create" class="btn btn-outline-primary btn-sm">Novo tipo de despesa</a>
         </p>
 
-        @if (TempData["Confirmacao"] != null)
+        @if(TempData["Confirmacao"] != null)
         {
             <h6 class="alert alert-success">@TempData["Confirmacao"]</h6>
         }
-
+        
         <form asp-action="Index" asp-controller="TipoDespesas" method="post">
             <div class="form-group">
                 <div class="input-group col-md-6">
@@ -44,7 +46,7 @@
                             @Html.DisplayFor(modelItem => item.Nome)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.TipoDespesaId" class="btn btn-outline-info btn-sm">Atualizar</a> |
+                            <a asp-action="Edit" asp-route-id="@item.TipoDespesaId" class="btn btn-outline-info btn-sm">Atualizar</a> |                            
                             <a class="btn btn-outline-danger btn-sm" onclick="ExibirModal(@item.TipoDespesaId, '@item.Nome')">Excluir</a>
                         </td>
                     </tr>
@@ -74,11 +76,13 @@
     </div>
 </div>
 
-@section Scripts{
+@section  Scripts{ 
     <script>
         function ExibirModal(id, nome) {
             $(".nome")[0].innerHTML = nome;
+
             $(".modal").modal();
+
             $(".btnExcluir").on('click', function () {
                 $.ajax({
                     url: "TipoDespesas/Delete",
@@ -90,6 +94,7 @@
                     }
                 });
             });
+
         }
     </script>
 }

@@ -1,8 +1,10 @@
 ﻿@model GerenciadorDespesas.Models.Salarios
 
 @{
-    ViewData["Title"] = "Novo Salario";
+    ViewData["Title"] = "Novo salário";
 }
+
+
 <div class="formulario">
     <h6>Salarios</h6>
     <hr />
@@ -11,7 +13,7 @@
             <form asp-action="Create" class="form rounded border">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="MesId" class="control-label">Mes</label>
+                    <label asp-for="MesId" class="control-label">Mês</label>
                     <select asp-for="MesId" class="form-control" asp-items="ViewBag.MesId"></select>
                 </div>
                 <div class="form-group">
@@ -20,15 +22,14 @@
                     <span asp-validation-for="Valor" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Salvar" class="btn btn-default" />&nbsp;
-
+                    <input type="submit" value="Salvar" class="btn btn-outline-success btn-sm" /> &nbsp;
                     <a asp-action="Index" class="btn btn-outline-dark btn-sm">Voltar</a>
                 </div>
             </form>
         </div>
     </div>
-
 </div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

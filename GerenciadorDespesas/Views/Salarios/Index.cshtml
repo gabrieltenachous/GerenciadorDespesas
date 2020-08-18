@@ -1,15 +1,19 @@
 ﻿@model IEnumerable<GerenciadorDespesas.Models.Salarios>
 
 @{
-    ViewData["Title"] = "Salarios Cadastrados";
+    ViewData["Title"] = "Salários Cadastrados";
 }
+
+
 <div class="tabela">
     <div class="container">
-        <h6>Salarios Cadastrados</h6>
+        <h6>Salários cadastrados</h6>
+
         <p class="btnNovo">
-            <a asp-action="Create" class="btn btn-outline-primary btn-sm">Novo Salario</a>
+            <a asp-action="Create" class="btn btn-outline-primary btn-sm">Novo salário</a>
         </p>
-        @if (TempData["Confirmacão"] != null)
+
+        @if (TempData["Confirmacao"] != null)
         {
             <h6 class="alert alert-success">
                 @TempData["Confirmacao"]
@@ -26,6 +30,7 @@
                 </div>
             </div>
         </form>
+
 
         <table class="table table-hover">
             <thead>
@@ -58,8 +63,8 @@
             </tbody>
         </table>
     </div>
-
 </div>
+
 
 <div class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -71,7 +76,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Deseja prosseguir com a exclusão do salario ?</p>
+                <p>Deseja prosseguir com a exclusão do salário ?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary btnExcluir">Sim</button>
@@ -83,8 +88,10 @@
 
 @section Scripts{
     <script>
-        function ExibirModal(id) {
+        function ExibirModal(id) {           
+
             $(".modal").modal();
+
             $(".btnExcluir").on('click', function () {
                 $.ajax({
                     url: "Salarios/Delete",
@@ -96,6 +103,7 @@
                     }
                 });
             });
+
         }
     </script>
 }

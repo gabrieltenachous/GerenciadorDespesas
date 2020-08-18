@@ -1,35 +1,53 @@
 ﻿@model X.PagedList.IPagedList<GerenciadorDespesas.Models.Despesas>
 @using X.PagedList.Mvc.Core
 @using X.PagedList.Mvc.Common
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Despesas cadastradas";
 }
 
-<h2>Index</h2>
+
 <div class="tabela">
     <div class="container">
         <p class="btnNovo">
-            <a asp-action="Create" class="btnNovo btn-outline-primary btn-sm">Nova Despesa</a>
+            <a asp-action="Create" class="btn btn-outline-primary btn-sm">Nova despesa</a>
         </p>
+
         @if (TempData["Confirmacao"] != null)
         {
-            <h6 class="alert alert-success">@TempData </h6>
+            <h6 class="alert alert-success">@TempData["Confirmacao"]</h6>
         }
+
 
         <div class="row justify-content-md-center">
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><strong>Mês</strong></label>
-                <label class="col-sm-9">
+                <div class="col-sm-9">
                     <select class="form-control escolhaMes" asp-items="ViewBag.Meses"></select>
-                </label>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <partial name="_GastoTotalMes"/>
+                <partial name="_GastoTotalMes" />
+            </div>
+
+            <div class="col">
+                <partial name="_GastoMes" />
             </div>
         </div>
+
+        <div class="row">
+            <partial name="_GastosTotais" />
+        </div>
+
+        <div class="estatisticas">
+            <div class="alert alert-primary">
+                @await Component.InvokeAsync("Estatisticas")
+            </div>
+        </div>
+
         <div class="tabelaPrincipal">
             <table class="table table-hover">
                 <thead>
@@ -38,7 +56,7 @@
                             Meses
                         </th>
                         <th>
-                            Despesas
+                            Tipo da Despesa
                         </th>
                         <th>
                             Valor
@@ -72,6 +90,7 @@
         </div>
     </div>
 </div>
+
 @Html.PagedListPager(Model, pagina => Url.Action("Index", "Despesas", new { pagina }), new PagedListRenderOptionsBase
 {
     LiElementClasses = new string[] {"page-item"},
@@ -92,21 +111,26 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary btnExcluir">Sim</button>
-                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Não</button>
             </div>
         </div>
     </div>
 </div>
 
 @section Scripts{
-
-    <script src="~/js/GraficoTotalMes.js"></script>
+    
+    <script src="~/bundle.min.js"></script>
 
     <script>
-        CarregarDadosGastosTotaisMes(); 
+
+        CarregarDadosGastosMes();
+        CarregarDadosGastosTotaisMes();
+        CarregarDadosGastosTotais();
 
         function ExibirModal(id) {
+
             $(".modal").modal();
+
             $(".btnExcluir").on('click', function () {
                 $.ajax({
                     url: "Despesas/Delete",
@@ -118,6 +142,7 @@
                     }
                 });
             });
+
         }
     </script>
 

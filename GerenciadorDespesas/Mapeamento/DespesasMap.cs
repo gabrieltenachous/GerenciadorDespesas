@@ -11,7 +11,7 @@ namespace GerenciadorDespesas.Mapeamento
     public class DespesasMap : IEntityTypeConfiguration<Despesas>
     {
         #region configuração despesas
-        public void Configure(EntityTypeBuilder<Despesas> builder)
+        public void Configure (EntityTypeBuilder<Despesas> builder)
         {
             builder.HasKey(d => d.DespesaId);
             builder.Property(d => d.Valor).IsRequired();

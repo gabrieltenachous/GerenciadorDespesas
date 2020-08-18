@@ -1,7 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
-
+body {   
     padding-bottom: 20px;
 }
 
@@ -17,7 +16,11 @@ body {
     font-size: 20px;
     line-height: 1.4;
 }
- 
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
 
 /* QR code generator */
 #qrCode {
@@ -31,11 +34,13 @@ body {
         display: none;
     }
 }
-.table{
-    padding-top:50px;
-    padding-bottom  :50px;
 
+
+.tabela {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
+
 .btnNovo {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -46,7 +51,8 @@ body {
     padding-bottom: 50px;
 }
 
-.form { 
+.form {
+    padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 50px;
     padding-right: 50px;
