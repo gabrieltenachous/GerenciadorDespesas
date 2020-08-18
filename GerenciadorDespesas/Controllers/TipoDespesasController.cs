@@ -44,7 +44,7 @@ namespace GerenciadorDespesas.Controllers
 
             return Json(true);
         }
-
+         
         public JsonResult AdicionarTipoDespesa(string txtDespesa)
         {
             if (!String.IsNullOrEmpty(txtDespesa))

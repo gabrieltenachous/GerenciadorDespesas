@@ -1,22 +1,22 @@
-﻿using System; 
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GerenciadorDespesas.Models; 
+using GerenciadorDespesas.Models;
 using X.PagedList;
 namespace GerenciadorDespesas.Controllers
 {
     public class DespesasController : Controller
     {
         private readonly Contexto _context;
-         
+
         public DespesasController(Contexto context)
         {
             _context = context;
         }
-       
+
         public async Task<IActionResult> Index(int? pagina)
         {
             const int itensPagina = 10;
@@ -28,7 +28,7 @@ namespace GerenciadorDespesas.Controllers
             return View(await contexto.ToPagedListAsync(numeroPagina, itensPagina));
         }
 
-         
+
 
         // GET: Despesas/Create
         public IActionResult Create()
@@ -38,6 +38,7 @@ namespace GerenciadorDespesas.Controllers
             return View();
         }
 
+         
         // POST: Despesas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -92,7 +93,7 @@ namespace GerenciadorDespesas.Controllers
             {
                 try
                 {
-                    TempData["Confirmacao"] = "Despesa atualizada com sucesso"; 
+                    TempData["Confirmacao"] = "Despesa atualizada com sucesso";
                     _context.Update(despesas);
                     await _context.SaveChangesAsync();
                 }
@@ -113,7 +114,7 @@ namespace GerenciadorDespesas.Controllers
             ViewData["TipoDespesaId"] = new SelectList(_context.TipoDespesas, "TipoDespesaId", "Nome", despesas.TipoDespesaId);
             return View(despesas);
         }
-         
+
         // POST: Despesas/Delete/5
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
