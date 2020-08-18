@@ -39,3 +39,4 @@ C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDesp
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesas\Create.g.cshtml.cs
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesas\Edit.g.cshtml.cs
 C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesas\Index.g.cshtml.cs
+C:\Users\gabri\OneDrive\Área de Trabalho\C#\GerenciadorDespesas\GerenciadorDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_GastoTotalMes.g.cshtml.cs

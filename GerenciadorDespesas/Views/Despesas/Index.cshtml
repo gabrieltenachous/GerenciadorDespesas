@@ -27,7 +27,7 @@
 
         <div class="row">
             <div class="col">
-                <patial name="_GastoTotalMes"></patial>
+                <partial name="_GastoTotalMes"/>
             </div>
         </div>
         <div class="tabelaPrincipal">
@@ -100,12 +100,11 @@
 
 @section Scripts{
 
-    <script src="~/bundle.min.js"></script>
+    <script src="~/js/GraficoTotalMes.js"></script>
 
     <script>
-        CarregarDadosGastosMes();
-        CarregarDadosGastosTotaisMes();
-        CarregarDadosGastosTotais();
+        CarregarDadosGastosTotaisMes(); 
+
         function ExibirModal(id) {
             $(".modal").modal();
             $(".btnExcluir").on('click', function () {
