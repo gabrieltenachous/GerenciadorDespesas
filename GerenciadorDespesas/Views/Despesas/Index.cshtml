@@ -15,6 +15,21 @@
         {
             <h6 class="alert alert-success">@TempData </h6>
         }
+
+        <div class="row justify-content-md-center">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"><strong>Mês</strong></label>
+                <label class="col-sm-9">
+                    <select class="form-control escolhaMes" asp-items="ViewBag.Meses"></select>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <patial name="_GastoTotalMes"></patial>
+            </div>
+        </div>
         <div class="tabelaPrincipal">
             <table class="table table-hover">
                 <thead>
@@ -48,7 +63,7 @@
                             </td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.DespesaId" class="btn btn-outline-info btn-sm">Atualizar</a> |
-                                <a onclick="ExibirModal(@item.DespesaId)"class="btn btn-outline-danger btn-sm">Excluir</a>
+                                <a onclick="ExibirModal(@item.DespesaId)" class="btn btn-outline-danger btn-sm">Excluir</a>
                             </td>
                         </tr>
                     }
